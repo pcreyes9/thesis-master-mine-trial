@@ -1,0 +1,155 @@
+<?php
+
+namespace Database\Seeders;
+
+use Carbon\Carbon;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+class CustomerOrderSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table('customer_orders')->insert([
+            [
+                'customers_id' => 1,
+                'customer_shipping_address_id' => 1,
+                'subtotal' => 790,
+                'shippingfee' => 50,
+                'total' => 840,
+                'profit' => 170,
+                'mode_of_payment' => 'CASH',
+                'payment_id' => 1,
+                'status' => 'RECEIVED',
+                'cancellation_reason' => 'NULL',
+                'received_by' => 'OWNER',
+                'phone_number' => '09953127516',
+                'status' => 'RECEIVED',
+                'created_at' => Carbon::create(2023, 1, 9, 0),
+                'updated_at' => Carbon::create(2023, 1, 9, 0),
+            ],
+            [
+                'customers_id' => 1,
+                'customer_shipping_address_id' => 1,
+                'subtotal' => 500,
+                'shippingfee' => 50,
+                'total' => 550,
+                'profit' => 60,
+                'mode_of_payment' => 'CASH',
+                'payment_id' => 1,
+                'status' => 'RECEIVED',
+                'cancellation_reason' => 'NULL',
+                'received_by' => 'OWNER',
+                'phone_number' => '09953127516',
+                'status' => 'RECEIVED',
+                'created_at' => Carbon::create(2023, 1, 9, 0),
+                'updated_at' => Carbon::create(2023, 1, 9, 0),
+            ],
+            [
+                'customers_id' => 2,
+                'customer_shipping_address_id' => 2,
+                'subtotal' => 500,
+                'shippingfee' => 50,
+                'total' => 500,
+                'profit' => 90,
+                'mode_of_payment' => 'CASH',
+                'payment_id' => 1,
+                'status' => 'RECEIVED',
+                'cancellation_reason' => 'NULL',
+                'received_by' => 'OWNER',
+                'phone_number' => '09953127516',
+                'status' => 'RECEIVED',
+                'created_at' => Carbon::create(2023, 2, 9, 0),
+                'updated_at' => Carbon::create(2023, 2, 9, 0),
+            ],[
+                'customers_id' => 3,
+                'customer_shipping_address_id' => 3,
+                'subtotal' => 2000,
+                'shippingfee' => 50,
+                'total' => 2050,
+                'profit' => 250,
+                'mode_of_payment' => 'CASH',
+                'payment_id' => 1,
+                'status' => 'RECEIVED',
+                'cancellation_reason' => 'NULL',
+                'received_by' => 'OWNER',
+                'phone_number' => '09953127516',
+                'status' => 'RECEIVED',
+                'created_at' => Carbon::create(2023, 2, 9, 0),
+                'updated_at' => Carbon::create(2023, 2, 9, 0),
+            ],[
+                'customers_id' => 4,
+                'customer_shipping_address_id' => 4,
+                'subtotal' => 2250,
+                'shippingfee' => 50,
+                'total' => 2300,
+                'profit' => 450,
+                'mode_of_payment' => 'CASH',
+                'payment_id' => 1,
+                'status' => 'RECEIVED',
+                'cancellation_reason' => 'NULL',
+                'received_by' => 'OWNER',
+                'phone_number' => '09953127516',
+                'status' => 'RECEIVED',
+                'created_at' => Carbon::create(2023, 2, 9, 0),
+                'updated_at' => Carbon::create(2023, 2, 9, 0),
+            ],[
+                'customers_id' => 1,
+                'customer_shipping_address_id' => 1,
+                'subtotal' => 500,
+                'shippingfee' => 50,
+                'total' => 550,
+                'profit' => 180,
+                'mode_of_payment' => 'CASH',
+                'payment_id' => 1,
+                'status' => 'RECEIVED',
+                'cancellation_reason' => 'NULL',
+                'received_by' => 'OWNER',
+                'phone_number' => '09953127516',
+                'status' => 'RECEIVED',
+                'created_at' => Carbon::create(2023, 3, 9, 0),
+                'updated_at' => Carbon::create(2023, 3, 9, 0),
+            ],
+            [
+                'customers_id' => 1,
+                'customer_shipping_address_id' => 1,
+                'subtotal' => 360,
+                'shippingfee' => 50,
+                'total' => 410,
+                'profit' => 120,
+                'mode_of_payment' => 'CASH',
+                'payment_id' => 1,
+                'status' => 'RECEIVED',
+                'cancellation_reason' => 'NULL',
+                'received_by' => 'OWNER',
+                'phone_number' => '09953127516',
+                'status' => 'RECEIVED',
+                'created_at' => Carbon::create(2023, 4, 9, 0),
+                'updated_at' => Carbon::create(2023, 4, 9, 0),
+            ],
+            [
+                'customers_id' => 1,
+                'customer_shipping_address_id' => 1,
+                'subtotal' => 900,
+                'shippingfee' => 50,
+                'total' => 950,
+                'profit' => 300,
+                'mode_of_payment' => 'CASH',
+                'payment_id' => 1,
+                'status' => 'RECEIVED',
+                'cancellation_reason' => 'NULL',
+                'received_by' => 'OWNER',
+                'phone_number' => '09953127516',
+                'status' => 'RECEIVED',
+                'created_at' => Carbon::create(2023, 5, 9, 0),
+                'updated_at' => Carbon::create(2023, 5, 9, 0),
+            ],
+        ]);
+    }
+}

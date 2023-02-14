@@ -1,0 +1,117 @@
+@extends('customer.layout.base')
+@section('content')
+@section('title', 'Home')
+<div class=" container box flex flex-col-reverse lg:flex-row items-center gap-16 mt-10 mb-10 ml:14 px-10 mx-20 py-10">
+    <!-- Content -->
+    <div class="flex flex-1 flex-col items-center lg:items-start lg:pt-10">
+        <h2 class="border-b-2 border-slate-400 text-5xl font-extrabold lg:text-5xl text-center lg:text-left mb-6">
+            Welcome to Go-Dental
+        </h2>
+        <div class="text-bookmark-grey text-2xl italic text-center font-normal lg:text-left mb-6">
+            All your Dental needs in One GO! Shop Now!
+        </div>
+    </div>
+    <!-- Image -->
+    <div class="md:flex hidden justify-center flex-1 w-full mb-5 md:mb-16 lg:mb-0 z-10">
+        @if(count($banners) == 0)
+            <img class=" h-5/6 sm:w-3/4 " src="{{ asset('dist/images/undraw_web_shopping.svg') }}" alt="" />
+        @else
+            <div class="home-mode" >
+                @foreach ($banners as $banner)
+                    <div class="h-72 px-2">
+                        <div class="h-full object-cover rounded-md overflow-hidden"  >
+                            <img class="object-fill w-96 h-full " data-action="zoom" src="{{ url('storage/banner/'.$banner->featured_image) }}" alt="" />
+                        </div>
+                    </div>
+                @endforeach
+            @endif
+        </div>
+    </div>
+</div >
+<div class="container">
+    <div class="">
+        <p class=" border-b-2 border-slate-300 text-bookmark-grey text-2xl italic text-center font-normal lg:text-left">
+            Featured Products
+        </p>
+    </div>
+    <div class="box my-5">
+        <div class="responsive-mode flex flex-1">
+            @foreach($products as $product)
+                @if($loop->index == 😎 @break @endif
+                <a href="{{ Route('productshow', $product) }}" class="m-3 sm:py-3 flex items-center col-span-12 max-w-xs  md:col-span-4 lg:col-span-4 xl:col-span-3 2xl:col-span-2 w-full">
+                    <div class="box rounded-md p-3 relative zoom-in">
+                        <div class="h-48 2xl:h-48">
+                            @foreach ($product->images->take(1) as $model)
+                                <img alt="" class="object-scale-down h-48 rounded-md w-full" src="{{ url('storage/product_photos/'.$model->images) }}">
+                            @endforeach
+                        </div> 
+                        <div class=" my-3">
+                            <div class="font-medium truncate text-primary text-base">{{$product->name}}</div>
+                        </div>
+                        <div class="px-2 pt-3 pb-2 border-t border-slate-200/60 dark:border-darkmode-400">
+                            <div class="flex w-full text-xs text-slate-500">
+                                <div class="mr-auto"> Price: <span class="">₱{{$product->sprice }}</span> </div>
+                                <div class="text-xs">{{$product->brand->name }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>    
+            @endforeach 
+        </div>
+    </div>
+    <div class=" my-5 mt-14 ">
+        <p class=" border-b-2 border-slate-300 text-bookmark-grey text-2xl italic text-center font-normal lg:text-left mb-3">
+            Shop by Categories
+        </p>
+        <div class="intro-y grid grid-cols-12 gap-5 ">
+            <div class="intro-y col-span-12 ">
+                <div class="grid grid-cols-12 gap-5 mt-5 pt-5 ">
+                    @foreach($categories as $category)
+                        @if($loop->index == 6) @break @endif
+                        <a href=""  class="intro-y block col-span-4 max-w-xs md:col-span-4 lg:col-span-4 xl:col-span-2 2xl:col-span-2">
+                            <div class="box rounded-md p-3 relative zoom-in">
+                                <div class="flex-none relative block before:block before:w-full before:pt-[100%]">
+                                    <div class="absolute top-0 left-0 w-full h-full image-fit">
+                                        <img alt="Midone - HTML Admin Template" class="rounded-md" src="dist/images/logo.png">
+                                    </div>
+                                </div>
+                                <div class="block font-medium text-center truncate mt-3">{{$category->name }} </div>
+                            </div>
+                        </a>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-10 ">
+        <p class=" border-b-2 border-slate-300 text-bookmark-grey text-2xl italic text-center font-normal lg:text-left">
+            Best Selling Products
+        </p>
+    </div>
+    <div class="box my-5">
+        <div class="responsive-mode flex flex-1">
+            @foreach($products as $product)
+                @if($loop->index == 😎 @break @endif
+                <a href="{{ Route('productshow', $product) }}" class="m-3 sm:py-3 flex items-center col-span-12 max-w-xs  md:col-span-4 lg:col-span-4 xl:col-span-3 2xl:col-span-2 w-full">
+                    <div class="box rounded-md p-3 relative zoom-in">
+                        <div class="h-48 2xl:h-48">
+                            @foreach ($product->images->take(1) as $model)
+                                <img alt="" class="object-scale-down h-48 rounded-md w-full" src="{{ url('storage/product_photos/'.$model->images) }}">
+                            @endforeach
+                        </div> 
+                        <div class=" my-3">
+                            <div class="font-medium truncate text-primary text-base">{{$product->name}}</div>
+                        </div>
+                        <div class="px-2 pt-3 pb-2 border-t border-slate-200/60 dark:border-darkmode-400">
+                            <div class="flex w-full text-xs text-slate-500">
+                                <div class="mr-auto"> Price: <span class="">₱{{$product->sprice }}</span> </div>
+                                <div class="text-xs">{{$product->brand->name }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>    
+            @endforeach 
+        </div>
+    </div>
+</div>
+@endsection
