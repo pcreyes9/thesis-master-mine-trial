@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class ProductSalesTable extends Component
 {
+    //creating new branch
     public $from ='2023-01-01';
     public $to ='2023-12-31';
     public $sorting = 'id';
