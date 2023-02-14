@@ -31,6 +31,5 @@ class ProductSalesTable extends Component
         ->where('ordered_products.created_at', '<=', $this->to)
         ->orderBy($this->sorting, 'desc')->get();
         return view('livewire.table.product-sales-table');
-        //asdhajkdhajkas
     }
 }
